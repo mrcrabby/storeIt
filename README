@@ -1,0 +1,14 @@
+What is storeIt ?
+
+storeIt aims to be two things :
+- an Asset Document Manager (ADM)
+- a Content Delivery Network (CDN) backend
+
+storeIt ADM specificities :
+- buckets to ease assets organisation
+- Attachable behaviors : generate derivated documents from your master Asset (as many thumbs in many sizes you want, pdf,doc preview, video preview, music preview, ...)
+- RESTfull interface (bucket & behavior driven)
+- Multiple storage backend support (File system, mongoDB, mogileFS, S3, ... and counting)
+
+storeIt CDN backend specificities :
+- send rigth HTTP headers to ease data caching by frontend reverse proxies and CDN systems

@@ -14,12 +14,7 @@ class Consummer(models.Model):
 # You can organize assets collections in a bucket.
 # Typically 'one bucket per project' is a good option.
 class Bucket(models.Model):
-	STATUS_CHOICES = (
-				('P', 'Public'),
-				('X', 'Private'),
-			)
-	name = models.CharField(max_length=50, unique=True)								# Convenient name for REST route (@see slug field in django ?)
-	status = models.CharField(max_length=1, choices=STATUS_CHOICES)
+	name = models.CharField(max_length=50, unique=True) # Convenient name for REST route (@see slug field in django ?)
 	created_at = models.DateTimeField(auto_now_add=True)
 	modified_at = models.DateTimeField(auto_now=True)
 	consummer = models.ForeignKey(Consummer)
@@ -28,9 +23,9 @@ class Bucket(models.Model):
 # TODO : think about 'chainable' behaviours, like generating 
 # 3 thumbs for an image in 3 different sizes
 class Behavior(models.Model):
-	name = models.CharField(max_length=50, unique=True)								# Convenient name for REST route (@see slug field in django ?)
-	task_name = models.CharField(max_length=50)							 					# from .ini enabled plugins list
-	task_parameters = models.CharField(max_length=250) 								# store params serialized way (json ?)
+	name = models.CharField(max_length=50, unique=True)  # Convenient name for REST route (@see slug field in django ?)
+	task_name = models.CharField(max_length=50)	     # from .ini enabled plugins list
+	task_parameters = models.CharField(max_length=250)   # store params serialized way (json ?)
 	created_at = models.DateTimeField(auto_now_add=True)
 	modified_at = models.DateTimeField(auto_now=True)
 	consummer = models.ForeignKey(Consummer)
